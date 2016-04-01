@@ -2,6 +2,8 @@
 
 module.exports = function(grunt) {
 
+  require('load-grunt-tasks')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -20,17 +22,35 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 9000,
-          base: '/demo'
+          base: 'demo',
+          keepalive: true
         }
       }
-    }
-  });
+    },
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-connect');
+    babel: {
+      options: {
+        sourceMap: true,
+        presets: ['es2015']
+      },
+      dist: {
+        files: {
+          'demo/dist/app.js': 'demo/app.js'
+        }
+      }
+    },
+
+    copy: {
+      main: {
+        files: [
+          {expand: true, cwd: 'node_modules/angular', src: ['angular.min.js'], dest: 'demo/dist/dependencies'},
+          {expand: true, cwd: 'dist', src: ['angular-register.min.js'], dest: 'demo/dist/dependencies'}
+        ],
+      },
+    },
+  });
 
   // Default task(s).
   grunt.registerTask('build', ['uglify']);
-  grunt.registerTask('demo', ['connect']);
+  grunt.registerTask('demo', ['babel','copy','connect']);
 };

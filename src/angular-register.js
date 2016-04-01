@@ -150,3 +150,5 @@ function register(appName) {
     factory: factory
   };
 }
+
+module.exports = register;

@@ -1,6 +1,8 @@
 # angular-register
 
-> Write angular 1 modules using ES6 
+> Write angular 1 modules using ES6
+
+_You can use this module with AMD, CommonJS or just like a method of window object!_
 
 ## Instalation
 

@@ -33,8 +33,8 @@ register('app').controller('appController', AppController);
 ```
 
 ## Contributing
-Check [CONTRIBUTING.md][CONTRIBUTING.md]
+Check [CONTRIBUTING.md](https://github.com/matheuspoleza/blob/master/CONTRIBUTING.md)
 
 ## License
 
-[MIT][LICENSE.md] © Matheus Poleza
+[MIT](https://github.com/matheuspoleza/blob/master/LICENSE) © Matheus Poleza

@@ -1,3 +1,3 @@
 # angular-register
 
-:pencil: Register your angular modules using ES6 sintax
+:pencil: Register angular 1 modules using ES6 

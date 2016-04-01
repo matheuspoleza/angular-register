@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Register your angular modules using ES6 sintax",
   "main": "src/register.js",
-  "scripts": {
-    "test": "npm test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matheuspoleza/angular-register.git"
@@ -23,6 +20,10 @@
   },
   "homepage": "https://github.com/matheuspoleza/angular-register#readme",
   "dependencies": {
-    "angular": "^1.5.3"
+    "angular": "^1.5.3",
+    "grunt-contrib-uglify": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
   }
 }

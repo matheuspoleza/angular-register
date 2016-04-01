@@ -37,6 +37,9 @@ register('app').controller('appController', AppController);
 ## Contributing
 Check [CONTRIBUTING.md](https://github.com/matheuspoleza/blob/master/CONTRIBUTING.md)
 
+## Credits
+Thanks to [Michael Bromley](https://github.com/michaelbromley/michaelbromley) for example https://github.com/michaelbromley/angular-es6.
+
 ## License
 
 [MIT](https://github.com/matheuspoleza/blob/master/LICENSE) © Matheus Poleza

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> - version <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'dist/<%= pkg.name %>.js',
+        src: 'src/<%= pkg.name %>.js',
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
@@ -54,10 +54,10 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'dist', src: ['angular-register.min.js'], dest: 'demo/dist/dependencies'}
         ],
       },
-    },
+    }
   });
 
   // Default task(s).
-  grunt.registerTask('build', ['babel:register','uglify']);
+  grunt.registerTask('build', ['uglify']);
   grunt.registerTask('demo', ['babel','copy','connect']);
 };

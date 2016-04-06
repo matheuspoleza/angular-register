@@ -1,8 +1,8 @@
 {
   "name": "angular-register",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Register your angular modules using ES6 sintax",
-  "main": "src/register.js",
+  "main": "dist/angular-register.min.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/matheuspoleza/angular-register.git"

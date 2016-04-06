@@ -1,15 +1,9 @@
-angular.module('app', []);
+'use strict';
 
-/**
- * This is an example of a "component" directive which encapsulates a template.
- */
-class HelloWorldDirective {
-
-    constructor() {
-        this.template = '<h3>Hello World. Welcome to NgRegister</h3>';
-        this.restrict = 'E';
-        this.replace = true;
-    }
-}
-
-register('app').directive('helloWold', HelloWorldDirective);
+angular.module('demoApp', ['ngRoute'])
+  .config(['$routeProvider', ($routeProvider) => {
+    $routeProvider.when('/', {
+      templateUrl: 'hello-world/hello-world-template.html',
+      controller: 'HelloWorldController'
+    });
+}]);

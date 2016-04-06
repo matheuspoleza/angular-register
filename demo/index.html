@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>Angular Register ES6</title>
   </head>
-  <body>
-    <hello-world></hello-world>
-    
+  <body ng-app="demoApp">
+    <div ng-view></div>
+
     <script src="dist/dependencies/angular.min.js"></script>
+    <script src="dist/dependencies/angular-route.min.js"></script>
     <script src="dist/dependencies/angular-register.min.js"></script>
     <script src="dist/app.js"></script>
+    <script src="dist/hello-world/hello-world-controller.js"></script>
   </body>
 </html>

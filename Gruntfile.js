@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> - version <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/<%= pkg.name %>.js',
+        src: 'dist/<%= pkg.name %>.js',
         dest: 'dist/<%= pkg.name %>.min.js'
       }
     },
@@ -30,12 +30,17 @@ module.exports = function(grunt) {
 
     babel: {
       options: {
-        sourceMap: true,
+        sourceMap: false,
         presets: ['es2015']
       },
-      dist: {
+      app: {
         files: {
           'demo/dist/app.js': 'demo/app.js'
+        }
+      },
+      src: {
+        files: {
+          'demo/dist/hello-world/hello-world-controller.js': 'demo/hello-world/hello-world-controller.js'
         }
       }
     },
@@ -43,7 +48,9 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
+          {expand: true, cwd: 'node_modules/angular-route', src: ['angular-route.min.js'], dest: 'demo/dist/dependencies'},
           {expand: true, cwd: 'node_modules/angular', src: ['angular.min.js'], dest: 'demo/dist/dependencies'},
+          {expand: true, cwd: 'demo/hello-world', src: ['*.html'], dest: 'demo/dist/hello-world'},
           {expand: true, cwd: 'dist', src: ['angular-register.min.js'], dest: 'demo/dist/dependencies'}
         ],
       },
@@ -51,6 +58,6 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('build', ['uglify']);
+  grunt.registerTask('build', ['babel:register','uglify']);
   grunt.registerTask('demo', ['babel','copy','connect']);
 };

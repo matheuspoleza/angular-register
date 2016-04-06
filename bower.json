@@ -1,0 +1,25 @@
+{
+  "name": "angular-register",
+  "description": "Register your angular modules using ES6 sintax",
+  "main": "src/register.js",
+  "authors": [
+    "Matheus Poleza"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "register",
+    "es6",
+    "angular1"
+  ],
+  "homepage": "https://github.com/matheuspoleza/angular-register",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
